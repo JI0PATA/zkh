@@ -1,0 +1,166 @@
+.input {
+  &-column {
+    width: 100%;
+  }
+
+  &-row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  &-title {
+    font-size: 14px;
+    margin-bottom: 6px;
+    padding-left: 4px;
+  }
+
+  &-field {
+    padding: 19px 16px;
+    border: 1px solid $gray;
+    border-radius: 8px;
+    font-size: 14px;
+
+    &-mask {
+      width: 100%;
+
+      &-wrapper {
+        height: auto;
+      }
+    }
+
+    &::placeholder {
+      color: $gray;
+      font-weight: 300;
+    }
+  }
+
+  &-error {
+    display: none;
+    font-size: 13px;
+    padding-left: 4px;
+    margin-top: 5px;
+    color: indianred;
+  }
+
+  &-field.invalid + &-error {
+    display: block;
+  }
+
+  &-btn {
+    background: $primary;
+    width: 100%;
+    border-radius: 4px;
+    padding: 17px;
+    color: #fff;
+    font-weight: bold;
+    border-color: transparent;
+    font-size: 16px;
+    transition: background .4s;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+
+    &:focus {
+      background: $primary;
+    }
+
+    &:not(.disabled):hover {
+      background: #4CD18C;
+    }
+
+    &-small {
+      padding: 12px 62px;
+      display: inline-block;
+      width: auto;
+    }
+
+    &.disabled {
+      background: #B8BCC1;
+      cursor: not-allowed;
+    }
+
+    &-white {
+      font-size: 14px;
+      background: #F5F5F5;
+      color: #686868;
+      width: 191px;
+      padding: 8px 0;
+      margin-top: 16px;
+      transition: .3s;
+
+      &:focus {
+        background: #F5F5F5;
+      }
+
+      &.disabled {
+        background: #B8BCC1;
+      }
+
+      &:not(.disabled):hover {
+        background: #F5F5F5;
+        box-shadow: 0px 5px 10px rgba(14, 82, 82, 0.1);
+        border-radius: 4px;
+      }
+    }
+  }
+
+  &-forgot-password {
+    color: $primary;
+    font-size: 14px;
+    align-self: flex-start;
+    margin-top: 6px;
+    padding-left: 4px;
+  }
+
+  &-textarea {
+    padding: 16px;
+    height: 88px;
+    line-height: 24px;
+    font-size: 16px;
+    background: #fff;
+    border: 1px solid #D1D1D1;
+    border-radius: 8px;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 88px;
+    max-height: 400px;
+
+    &::placeholder {
+      color: #B8BCC1;
+    }
+  }
+
+  &-checkbox {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    display: inline-block;
+    background: #B8BCC1;
+    cursor: pointer;
+    position: relative;
+    transition: .3s;
+
+    &-container {
+      height: 20px;
+
+      input:checked + .input-checkbox {
+        background: transparent;
+
+        .input-checkbox--check {
+          opacity: 1;
+        }
+      }
+    }
+
+    &--check {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      transition: .3s;
+    }
+  }
+}

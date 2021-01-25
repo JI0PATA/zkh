@@ -1,29 +1,31 @@
+import routes from '@/router/routes'
+
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vuelidate from 'vuelidate'
+import store from '@/store'
 
 Vue.use(VueRouter)
-
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
+Vue.use(Vuelidate)
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  if (to.meta.auth !== false &&
+      Object.keys(store.getters.info).length === 0) {
+    return next({ name: 'LoginTenant' })
+  }
+  if (to.meta.role && to.meta.role !== store.getters.info.role) {
+    return next({ name: 'LoginTenant' })
+  }
+  if (to.meta.auth === false && Object.keys(store.getters.info).length !== 0) {
+    return next({ name: 'Home' })
+  }
+  next()
 })
 
 export default router

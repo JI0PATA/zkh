@@ -1,0 +1,351 @@
+.order {
+  &-container {
+    width: 100%;
+    margin-bottom: 40px;
+
+
+    .input-field {
+      padding: 7px 12px;
+    }
+  }
+
+  &-cancel {
+    &-container {
+      position: relative;
+    }
+    &--textarea {
+      margin-top: 16px;
+      height: 62px;
+      min-height: 62px;
+      padding: 8px 16px;
+    }
+    &--close {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 27px;
+      right: 0;
+      cursor: pointer;
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    &--buttons {
+      display: flex;
+      margin-top: 28px;
+
+      .order-btn {
+        margin-left: 24px;
+      }
+    }
+    &--checkbox {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+
+      span {
+        margin-left: 12px;
+      }
+    }
+  }
+
+  &-btn {
+    padding: 4px 22px;
+    margin-top: 0 !important;
+    width: auto;
+
+    &--margin {
+      &-24 {
+        margin-left: 24px;
+      }
+      &-8 {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  &-header {
+    display: flex;
+    align-items: center;
+
+    &-container {
+      .card-line {
+        margin-top: 24px;
+      }
+    }
+
+    &--title {
+      color: #212121;
+      line-height: 24px;
+      font-weight: 700;
+    }
+    &--phone {
+      margin-left: auto;
+    }
+    &--name {
+      margin-left: 24px;
+      color: #686868;
+    }
+  }
+
+  &-date {
+    &-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      color: #686868;
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+  &-time {}
+  &-panel {
+    margin-top: 15px;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #E8E8E8;
+    padding: 24px 32px;
+  }
+  &-title {
+    color: #212121;
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+  }
+  &-description {
+    color: #212121;
+    line-height: 24px;
+    font-weight: 500;
+    margin-top: 8px;
+  }
+  &-images {
+    margin-top: 32px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+      width: 125px;
+      height: 125px;
+    }
+
+    img {
+      width: 125px;
+      height: 125px;
+      border-radius: 8px;
+      border: 1px solid #000;
+      object-fit: cover;
+    }
+  }
+
+  &-status {
+    &-container {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      &--operator {
+        .order-status--progress-status {
+          margin-top: 12px;
+        }
+
+        .order-status--right-block {
+          .order-status--progress-status {
+            margin-top: 4px;
+          }
+        }
+      }
+    }
+
+    &--progress {
+      display: flex;
+      flex-direction: column;
+
+      &-input {
+        width: 96px;
+      }
+
+      &-title {
+        font-size: 12px;
+        color: #686868;
+        line-height: 16px;
+        font-weight: 600;
+      }
+      &-status {
+        display: flex;
+        align-items: center;
+        margin-top: 4px;
+
+        &-title {
+          font-size: 16px;
+          color: $primary;
+          font-weight: 600;
+          margin-left: 8px;
+        }
+      }
+    }
+
+    &--right-block {
+      display: flex;
+      align-items: center;
+
+      .order-status--progress-status {
+        justify-content: flex-end;
+      }
+    }
+
+    &--uncover {
+      width: 40px;
+      height: 40px;
+      margin-left: 24px;
+      background: #FAFAFA;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: .3s;
+      position: relative;
+
+      img {
+        transition: .3s;
+      }
+
+      img.active {
+        transform: rotate(180deg);
+      }
+
+      &:hover {
+        background: darken(#FAFAFA, 2);
+      }
+    }
+  }
+
+  &-progress {
+    &-container {}
+    &-list {}
+    &-item {
+      display: flex;
+      align-items: center;
+
+      &-step {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: $gray;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        line-height: 14px;
+        position: relative;
+        overflow: hidden;
+
+        &.complete {
+          background: #fff;
+        }
+
+        img {
+          position: absolute;
+          opacity: 1;
+        }
+
+        span {
+          transform: translateY(0.4px);
+        }
+      }
+
+      &-info {
+        margin-left: 16px;
+      }
+      &-title {
+        line-height: 24px;
+        color: #212121;
+        font-weight: 700;
+      }
+      &-description {
+        font-size: 12px;
+        color: #686868;
+        font-weight: 500;
+        line-height: 16px;
+        margin-top: 4px;
+      }
+
+      &-time {
+        display: flex;
+        align-items: center;
+        justify-self: flex-end;
+        margin-left: auto;
+
+        img {}
+        &-text {
+          line-height: 24px;
+          color: #686868;
+          font-weight: 700;
+          margin-left: 8px;
+        }
+      }
+    }
+
+    &-line {
+      width: 1px;
+      height: 50px;
+      margin-left: 9px;
+    }
+  }
+
+  &-tenant-time {
+    &-container {
+      color: #686868;
+      display: flex;
+      align-items: center;
+      height: 24px;
+      font-weight: 600;
+      justify-content: flex-end;
+      margin-top: 10px;
+
+      .card-vertical-line {
+        margin: 0 15px;
+      }
+    }
+
+    &-separator {
+      display: inline-block;
+      margin: 0 5px;
+    }
+  }
+
+  &-rate {
+    &-caption {
+      text-transform: uppercase;
+      color: #b8bcc1;
+      font-weight: 700;
+    }
+  }
+
+  &-dropdown {
+    &-dots {
+      position: relative;
+      margin-left: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+  }
+
+  &-rate {
+    display: flex;
+    align-items: center;
+
+    img {
+      cursor: pointer;
+    }
+  }
+}

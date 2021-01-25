@@ -1,0 +1,142 @@
+.nav {
+  &-container {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    padding: 11px 0;
+    border-bottom: 1px solid #F5F5F5;
+    z-index: 10;
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &-left {
+
+  }
+  &-right {
+    display: flex;
+    align-items: center;
+  }
+  &-menu {
+    //width: 670px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &-link {
+    font-size: 14px;
+    color: #212121;
+    transition: color .2s;
+    cursor: pointer;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    margin-left: 70px;
+
+    &:hover, &.color {
+      color: $primary;
+    }
+
+    &--logo {
+      width: 77px;
+      height: 50px;
+      object-fit: cover;
+    }
+  }
+
+  &-profile {
+    &--name {
+      margin-left: 12px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    &--burger {
+      width: 24px;
+      margin-left: 32px;
+      cursor: pointer;
+    }
+  }
+}
+
+.profile {
+  &-panel {
+    position: absolute;
+    top: calc(100% + 3px);
+    transform: translateX(-80px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    border-radius: 12px;
+    background: #fff;
+    padding: 16px 0 9px;
+    z-index: 50;
+  }
+  &-section {
+    position: relative;
+    padding: 0 16px;
+
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: #F5F5F5;
+      margin: 12px auto;
+    }
+
+    &--logout {
+      cursor: pointer;
+      transition: .4s;
+      padding-top: 4px;
+      padding-bottom: 4px;
+
+      &:hover {
+        background: #F5F5F5;
+      }
+    }
+  }
+  &-info {
+    &-row {
+      display: flex;
+      align-items: center;
+    }
+    &-data {
+      color: #686868;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+  }
+  &-name {
+    width: 146px;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 700;
+  }
+  &-status {
+    color: #686868;
+    font-size: 12px;
+    margin-top: 8px;
+  }
+  &-avatar {
+    margin-left: 21px;
+    width: 32px;
+  }
+
+  &-logout {
+    display: flex;
+    align-items: center;
+    color: #686868;
+
+    img {
+      margin-left: 4px;
+    }
+  }
+}

@@ -1,18 +1,41 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <component :is="component"></component>
+    <Loader v-if="loader"/>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import { mapGetters } from 'vuex'
+import TenantMain from '@/views/Tenant/Main'
+import OperatorMain from '@/views/Operator/Main'
+import OrganizationMain from '@/views/Organization/Main'
+import AdminMain from '@/views/Admin/Main'
+import Loader from '@/components/app/Loader'
 
 export default {
   name: 'Home',
+  data: () => ({
+    roles: {
+      0: 'tenant',
+      1: 'operator',
+      2: 'organization',
+      3: 'admin'
+    },
+    loader: false
+  }),
+  computed: {
+    ...mapGetters(['info']),
+    component () {
+      return `${this.roles[this.info.role]}-main`
+    }
+  },
   components: {
-    HelloWorld
+    TenantMain,
+    OperatorMain,
+    OrganizationMain,
+    AdminMain,
+    Loader
   }
 }
 </script>

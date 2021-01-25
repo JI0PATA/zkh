@@ -1,0 +1,137 @@
+.request {
+  &-container {
+    width: 100%;
+    padding: 32px 32px 40px;
+    border-radius: 8px;
+    background: #FFF;
+    border: 1px solid #E8E8E8;
+  }
+  &-title {
+    line-height: 36px;
+    font-size: 28px;
+    margin: 0;
+    font-weight: 600;
+  }
+  &-textarea {
+    margin-top: 16px;
+  }
+
+  &-additional-info {
+    display: flex;
+    width: 100%;
+    margin-top: 24px;
+    justify-content: space-between;
+
+    &--right {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &-datetime {
+    &-container {
+      background: #fff;
+      border: 1px solid #D1D1D1;
+      border-radius: 8px;
+      padding: 11px 10px;
+      width: 177px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      color: #686868;
+      font-size: 14px;
+
+      &:focus {
+        border-color: $primary;
+      }
+    }
+    &-date {
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: 100px;
+      flex-shrink: 0;
+
+      .mx-datepicker {
+        position: absolute;
+        left: -8px;
+        width: 100px;
+        height: 100%;
+        opacity: 0;
+        top: -9px;
+      }
+
+      &-title {
+        margin-left: 8px;
+        color: #000;
+
+        ::placeholder {
+          color: #686868;
+        }
+      }
+
+      &:after {
+        content: "";
+        display: block;
+        height: 24px;
+        width: 1px;
+        background: #E8E8E8;
+        margin-left: 30px;
+        position: absolute;
+        right: 0;
+      }
+    }
+    &-time {
+      margin-left: 12px;
+    }
+    &-title {
+      width: 100%;
+      border: none;
+    }
+  }
+
+  &-photo {
+    &-container {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    &-title {
+      color: $primary;
+      letter-spacing: 0.5px;
+      margin-right: 8px;
+      font-weight: 700;
+    }
+  }
+
+  &-btn {
+    margin-left: 32px;
+  }
+}
+
+.mx-datepicker-popup {
+  border: 1px solid #E8E8E8;
+  border-radius: 8px;
+}
+
+.mx-calendar-content .cell:hover {
+  background-color: #f3fef8 !important;
+}
+
+.mx-calendar-content .cell.active {
+  border-radius: 4px;
+  background-color: $primary !important;
+  color: #fff !important;
+}
+
+.mx-table-date .today {
+  border: 1px solid #E8E8E8;
+  border-radius: 4px;
+  color: $primary !important;
+}
+
+.mx-btn:hover {
+  color: $primary !important;
+}

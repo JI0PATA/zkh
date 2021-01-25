@@ -1,0 +1,165 @@
+.sidebar {
+  &-panel {
+    width: 352px;
+    //position: sticky;
+    top: 120px;
+  }
+  &:not(:first-child) {
+    margin-top: 12px;
+  }
+
+  border-radius: 12px;
+  border: 1px solid #E8E8E8;
+  background: #F5F5F5;
+  z-index: 1;
+  padding: 32px;
+  height: auto;
+
+  &-title {
+    line-height: 24px;
+    color: #212121;
+    font-weight: 600;
+  }
+
+  &-description {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #686868;
+    margin-top: 8px;
+  }
+
+  &-setting {
+    margin-top: 16px;
+    display: flex;
+    align-items: flex-start;
+
+    span {
+      margin-left: 10px;
+      margin-top: -3px;
+    }
+
+    label {
+      height: 20px;
+    }
+  }
+
+  .input-checkbox {
+    flex-shrink: 0;
+  }
+
+  &-popup {
+    position: relative;
+    padding: 16px 32px;
+
+    &-img {
+      position: absolute;
+      top: 24px;
+      right: 32px;
+      z-index: 1;
+    }
+  }
+
+  &-btn {
+    background: #fff;
+    transition: .3s;
+
+    &:not(.disabled):hover {
+      box-shadow: 0px 5px 10px rgba(14, 82, 82, 0.1);
+      border-radius: 4px;
+    }
+  }
+
+  &-description {
+    z-index: 2;
+    position: relative;
+  }
+}
+
+.faq {
+  &-title {
+    color: #212121;
+    font-size: 14px;
+    line-height: 18px;
+    width: 143px;
+    text-align: left;
+    font-weight: 400;
+    margin-bottom: 14px;
+
+    &-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      outline: none;
+
+      &.ui-accordion-header-active .faq-arrow {
+        transform: rotate(180deg)
+      }
+    }
+  }
+
+  &-arrow {
+    transition: .3s;
+  }
+
+  &-list {
+    margin-top: 24px !important;
+  }
+
+  &-description {
+    color: #686868;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  /*.vsa {
+    &-list {
+      width: 100%;
+
+      --vsa-bg-color: transparent;
+      --vsa-border-color: transparent;
+      --vsa-highlight-color: transparent;
+      --vsa-content-padding: 0 40px 0 0;
+      --vsa-min-width: 0;
+      --vsa-max-width: 1000px;
+    }
+
+    &-item {
+      width: 100%;
+      background: transparent;
+
+      &__content {
+        margin-top: 14px;
+        font-size: 12px;
+        color: #686868;
+        font-weight: 400;
+      }
+
+      &__heading {
+        background: transparent;
+
+        &[data-vsa-active="true"] .faq-arrow {
+          transform: rotate(180deg)
+        }
+      }
+
+      &__trigger__content {
+        width: 100%;
+      }
+
+      &__trigger {
+        padding: 0;
+
+        &__icon {
+          display: none;
+        }
+      }
+    }
+  }*/
+
+  .card-line {
+    margin: 14px 0;
+  }
+}
